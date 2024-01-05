@@ -1,0 +1,22 @@
+﻿@model StudentWebApplication.Models.Student
+
+@{
+    ViewBag.Title = "IndexById";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="text-center" style="color: #007f00;">Student Details</h2>
+            <br />
+            <p><strong>ID:</strong> @Model.Id</p>
+            <p><strong>Name:</strong> @Model.Name</p>
+            <p><strong>Class:</strong> @Model.Course</p>
+            <p><strong>Marks:</strong> @Model.College</p>
+
+            <div class="form-group">
+                @Html.ActionLink("View All Students", "Index", null, new { @class = "btn btn-primary" })
+            </div>
+        </div>
+    </div>
+</div>

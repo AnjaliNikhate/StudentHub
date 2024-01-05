@@ -1,0 +1,45 @@
+﻿@model StudentWebApplication.Models.Student
+
+@{
+    ViewBag.Title = "AddStudent";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="text-center" style="color: #007f00; ">Add Student</h2>
+
+            <br />
+
+            @using (Html.BeginForm("SaveStudent", "Home", FormMethod.Post))
+            {
+                <div class="form-group" style="margin-bottom: 10px;">
+                    @Html.LabelFor(model => model.Id, new { @class = "control-label" })
+                    @Html.TextBoxFor(model => model.Id, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Id, null, new { style = "color: red;" })
+                </div>
+
+                <div class="form-group" style="margin-bottom: 10px;">
+                    @Html.LabelFor(model => model.Name, new { @class = "control-label" })
+                    @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Name, null, new { style = "color: red;" })
+                </div>
+
+                <div class="form-group" style="margin-bottom: 10px;">
+                    @Html.LabelFor(model => model.Course, new { @class = "control-label" })
+                    @Html.TextBoxFor(model => model.Course, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Course, null, new { style = "color: red;" })
+                </div>
+
+                <div class="form-group" style="margin-bottom: 10px;">
+                    @Html.LabelFor(model => model.College, new { @class = "control-label" })
+                    @Html.TextBoxFor(model => model.College, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.College, null, new { style = "color: red;" })
+                </div>
+                <br />
+                <button type="submit" class="btn btn-primary btn-block">Add Student</button>
+            }
+        </div>
+    </div>
+</div>
+
